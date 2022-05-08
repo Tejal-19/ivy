@@ -138,27 +138,29 @@
     <span class="n">static_argnums</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">static_argnames</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Provide a function which should be compiled, for faster inference. The</span>
-<span class="sd">    handle to the newly compiled function is returned.</span>
+    <span class="sd">&quot;&quot;&quot;Provide a function which should be compiled, for faster inference. The handle to</span>
+<span class="sd">    the newly compiled function is returned.</span>
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    func</span>
 <span class="sd">        Function to be compiled.</span>
 <span class="sd">    dynamic</span>
-<span class="sd">        Whether to compile all conditional branches, regardless of inputs during first invocation.</span>
+<span class="sd">        Whether to compile all conditional branches, regardless of inputs during first</span>
+<span class="sd">        invocation.</span>
 <span class="sd">    example_inputs</span>
 <span class="sd">        Example of inputs to the function to be compiled.</span>
 <span class="sd">        Required for torch in non-dynamic mode, unused by other frameworks.</span>
 <span class="sd">    static_argnums</span>
-<span class="sd">        The argument numbers which should be treated as static for compiling. Default is None.</span>
+<span class="sd">        The argument numbers which should be treated as static for compiling. Default is</span>
+<span class="sd">        None.</span>
 <span class="sd">    static_argnames</span>
-<span class="sd">        The argument names which should be treated as static for compiling. Default is None.</span>
+<span class="sd">        The argument names which should be treated as static for compiling. Default is</span>
+<span class="sd">        None.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">        The handle to the newly compiled function.</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">_cur_framework</span><span class="p">(</span><span class="n">example_inputs</span><span class="p">)</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
         <span class="n">func</span><span class="p">,</span> <span class="n">dynamic</span><span class="p">,</span> <span class="n">example_inputs</span><span class="p">,</span> <span class="n">static_argnums</span><span class="p">,</span> <span class="n">static_argnames</span>
