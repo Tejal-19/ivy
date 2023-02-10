@@ -1,0 +1,12 @@
+kornia==0.6.9
+torch-geometric==2.2.0
+botorch==0.8.1
+gpytorch==1.9.1
+gradslam==0.1.0
+fastai==2.7.10
+pytorch-lightning==1.9.0
+tensorly==0.8.0
+thinc==8.1.7
+transformers==4.26.1
+flower==1.2.0
+rllib==0.0.1
